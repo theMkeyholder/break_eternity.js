@@ -39,6 +39,32 @@ X^^^N === X^^X^^X^^ ... (N X^^s) 1
 X^^^N;Y === X^^X^^X^^ ... (N X^^s) Y
 ```
 
+# Use
+
+The library exports a single function object, Decimal, the constructor of Decimal instances.
+
+It accepts a value of type number, string or Decimal.
+
+```javascript
+    x = new Decimal(123.4567)
+    y = new Decimal('123456.7e-3')
+    z = new Decimal(x)
+    x.equals(y) && y.equals(z) && x.equals(z)        // true
+```
+    
+The methods that return a Decimal can be chained.
+
+```javascript
+    x.dividedBy(y).plus(z).times(9).floor()
+    x.times('1.23456780123456789e+9').plus(9876.5432321).dividedBy('4444562598.111772').ceil()
+````
+    
+A list of functions is provided earlier in this readme, or you can use autocomplete or read through the js file to see for yourself.
+
+If you want to just mess around with the library to try it, download break_eternity.js, add <script> </script> tags to the beginning and end respectively, rename it break_eternity.html, open it in chrome, right click -> inspect, go to the Javascript Console, and type in and execute whatever commands you want. Enjoy!
+
+---
+
 Special thanks:
 
 * https://mrob.com/pub/comp/hypercalc/hypercalc-javascript.html HyperCalc, an existing calculator that handles numbers until 10^^(1e10) and is proving very useful for testing. (I also use SpeedCrunch, which goes up to 1e1e9, and break_infinity.js, which goes up to 1e1e308, for testing)
@@ -47,3 +73,7 @@ Special thanks:
 * Razenpok, slabdrill and Hevipelle/Antimatter Dimensions, for inspiration, assistance and testing with the original break_infinity.js and its C# port.
 
 obligatory SEO: number library, big number, big num, bignumber, bignum, big integer, biginteger, bigint, incremental games, idle games, large numbers, huge numbers
+
+---
+
+Want to go even further? Check out Naruyoko's OmegaNum.js: https://github.com/Naruyoko/OmegaNum.js
